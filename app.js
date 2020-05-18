@@ -44,7 +44,7 @@ fs.readdir('./', (err, files) => {      //forma asyncronica, recomendada.
 
 })
 
-console.log('sync',rootDir);
+//console.log('sync',rootDir);
 
 
 
