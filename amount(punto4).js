@@ -1,37 +1,25 @@
 
-/*recorre 1 por 1 los files, y cada vez que pasa por uno dice cual es la cantidad. No se me ocurre como hacer que muestre la cantidad 1 vez*/
-//hay archivos vacios, como c.js y cc.js . Estan para poder realizar este punto.
-
 
 const fs = require('fs');
 
-const cant =fs.readdir('./', (err, files) => {      
-
-    (err) ? console.log(err) : console.log(files);
-    
- //const result = files.map(([v])=> v);
-    
-   //console.log(result);
-    //console.log(files.charAt(0));
-
-   // const quantity = files.filter(file => file[0] === 'b').length;
-    //console.log(quantity);
-        
-        
-      for (let i=0; i<files.length; i++){
-
-          //console.log(files[i][0]);
-            const quantity = files.filter(file => file[0] === files[i][0]).length;
-             console.log(`the amount of files starting with the letter ${files[i][0]} is: `+ quantity);
-
-             
-      }                
-    })
-
-       
 
 
-         
-  
-    
-    
+const punt4 = () => {
+  fs.readdir('./', (err, files) => {
+    let amount = 0; let startLetter = 'a';
+    for (const file of files) { // este for itera en c/u de los archivos de files, guarda cada iteracion de files en file.
+      if (file.startsWith(startLetter)) {
+        amount++;    
+      }
+    }
+    console.log('The amount of files starting with letter ', startLetter + ' is ' + amount);
+  });
+
+
+};
+
+
+module.exports.punt4 = punt4;
+
+
+
